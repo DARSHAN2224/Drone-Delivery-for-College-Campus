@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Tailwind CSS v4 imports */
+@import "tailwindcss";
+
+/* ===== CSS RESET & COMPATIBILITY ===== */
+/* Only reset box-sizing for better layout control */
+* {
+  box-sizing: border-box;
+}
+
+/* Minimal button reset - only for problematic buttons */
+.debug-button,
+.test-button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* CSS Custom Properties for colors */
+:root {
+  --color-primary-50: #fef7ee;
+  --color-primary-100: #fdedd6;
+  --color-primary-200: #fbd7ac;
+  --color-primary-300: #f8bb77;
+  --color-primary-400: #f5953e;
+  --color-primary-500: #f2751a;
+  --color-primary-600: #e35a0f;
+  --color-primary-700: #bc4310;
+  --color-primary-800: #963614;
+  --color-primary-900: #792e14;
+  
+  --color-secondary-50: #f8fafc;
+  --color-secondary-100: #f1f5f9;
+  --color-secondary-200: #e2e8f0;
+  --color-secondary-300: #cbd5e1;
+  --color-secondary-400: #94a3b8;
+  --color-secondary-500: #64748b;
+  --color-secondary-600: #475569;
+  --color-secondary-700: #334155;
+  --color-secondary-800: #1e293b;
+  --color-secondary-900: #0f172a;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 1s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+/* ===== BUTTON VISIBILITY FIXES ===== */
+/* Target only specific problematic buttons, not all buttons */
+.debug-button,
+.test-button,
+[data-testid*="button"],
+[class*="test-"],
+[class*="debug-"] {
+  /* Ensure test/debug buttons are always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+  
+  /* Force button positioning */
+  position: relative !important;
+  z-index: 999 !important;
+  
+  /* Ensure proper sizing */
+  min-height: 2.5rem !important;
+  min-width: 2.5rem !important;
+  
+  /* Ensure clickable area */
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  
+  /* Force button borders and backgrounds */
+  border: 2px solid currentColor !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+/* General button fixes - less aggressive */
+button:not([class*="btn-primary"]):not([class*="btn-secondary"]):not([class*="btn-success"]):not([class*="btn-danger"]):not([class*="btn-warning"]):not([class*="btn-info"]) {
+  /* Only fix buttons that don't have proper styling classes */
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+}
+
+/* Specific button type fixes */
+button:disabled,
+.btn:disabled,
+[type="button"]:disabled,
+[type="submit"]:disabled,
+[type="reset"]:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  background-color: #9ca3af !important;
+}
+
+/* Button hover states */
+button:hover,
+.btn:hover,
+[type="button"]:hover,
+
+/* ===== DOCUMENTATION PAGE ANIMATIONS ===== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* ===== DOCUMENTATION PAGE ANIMATIONS ===== */
+[type="submit"]:hover,
+[type="reset"]:hover {
+  background-color: #2563eb !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Button active states */
+button:active,
+.btn:active,
+[type="button"]:active,
+[type="submit"]:active,
+[type="reset"]:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Focus states for accessibility */
+button:focus,
+.btn:focus,
+[type="button"]:focus,
+[type="submit"]:focus,
+[type="reset"]:focus {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+  ring: 2px !important;
+  ring-color: #3b82f6 !important;
+}
+
+/* ===== FORM ELEMENT FIXES ===== */
+/* Only fix form elements that are specifically problematic */
+.debug-input,
+.test-input,
+[data-testid*="input"],
+[class*="test-"] input,
+[class*="debug-"] input {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* ===== Z-INDEX MANAGEMENT ===== */
+/* Ensure proper layering */
+.modal, .dropdown, .tooltip {
+  z-index: 1000 !important;
+}
+
+.header, .navbar {
+  z-index: 100 !important;
+}
+
+.content, .main {
+  z-index: 1 !important;
+}
+
+/* ===== LAYOUT FIXES ===== */
+/* Only fix specific problematic elements */
+.debug-container,
+.test-container {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* ===== COMPATIBILITY FIXES ===== */
+/* Ensure proper text rendering for test elements */
+.debug-button,
+.test-button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===== DEBUG STYLES (can be removed in production) ===== */
+/* Add visible borders to help debug layout issues */
+.debug * {
+  border: 1px solid red !important;
+}
+
+.debug button {
+  border: 2px solid blue !important;
+  background-color: yellow !important;
+  color: black !important;
+}
+
+/* Custom CSS for toast notifications */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-in {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+.animate-out {
+  animation: slideOutRight 0.3s ease-out forwards;
+}
+
+.slide-in-from-right-2 {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+/* Toast notification specific styles */
+.toast-notification {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+.toast-notification.removing {
+  animation: slideOutRight 0.3s ease-in forwards;
+}
+
+/* Smooth transitions for all notifications */
+.notification-enter {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Button styles using CSS custom properties */
+.btn-primary {
+  background-color: var(--color-primary-500);
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-600);
+}
+
+.btn-primary:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: var(--color-primary-500);
+  ring-offset: 2px;
+}
+
+.btn-secondary {
+  background-color: rgb(229 231 235);
+  color: rgb(55 65 81);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(209 213 219);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: rgb(107 114 128);
+  ring-offset: 2px;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.2s;
+}
+
+.card-hover:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transform: scale(1.02);
+}
+
+/* Image hover effects */
+.image-hover {
+  transition: transform 0.3s;
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Status badge styles */
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.status-approved {
+  background-color: rgb(34 197 94);
+  color: white;
+}
+
+.status-pending {
+  background-color: rgb(234 179 8);
+  color: white;
+}
+
+.status-unavailable {
+  background-color: rgb(239 68 68);
+  color: white;
+}
+
+/* Base styles */
+body {
+  background-color: white;
+  color: rgb(17 24 39);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Component styles */
+.btn-primary {
+  background-color: var(--color-primary-500);
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: colors 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-600);
+}
+
+.btn-primary:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: var(--color-primary-500);
+  ring-offset: 2px;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary-100);
+  color: var(--color-secondary-700);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: colors 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-200);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: var(--color-secondary-500);
+  ring-offset: 2px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-secondary-300);
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.input-field:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: var(--color-primary-500);
+  border-color: transparent;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--color-secondary-200);
+  padding: 1.5rem;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.gradient-bg {
+  background: linear-gradient(to bottom right, var(--color-primary-50), var(--color-primary-100));
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Food App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .offline-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .offline-icon {
+            width: 80px;
+            height: 80px;
+            background: #f3f4f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #6b7280;
+        }
+
+        .offline-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        h1 {
+            color: #1f2937;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #6b7280;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .retry-button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .retry-button:hover {
+            background: #2563eb;
+        }
+
+        .retry-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        .status-indicator {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .status-offline {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .status-online {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+
+        .features {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .features h3 {
+            color: #1f2937;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            color: #6b7280;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .connection-status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .connection-status.online {
+            background: #10b981;
+            color: white;
+        }
+
+        .connection-status.offline {
+            background: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="connection-status" id="connectionStatus">Checking...</div>
+
+    <div class="offline-container">
+        <div class="offline-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5zM12 15a3 3 0 100-6 3 3 0 000 6z"></path>
+            </svg>
+        </div>
+
+        <h1>You're Offline</h1>
+        <p>It looks like you've lost your internet connection. Don't worry, you can still access some features of the Food App while offline.</p>
+
+        <div class="features">
+            <h3>Available Offline:</h3>
+            <ul class="feature-list">
+                <li>View cached pages and content</li>
+                <li>Access previously loaded products and shops</li>
+                <li>View your order history</li>
+                <li>Access your profile information</li>
+                <li>QR code validation (will sync when online)</li>
+            </ul>
+        </div>
+
+        <button class="retry-button" id="retryButton" onclick="retryConnection()">
+            Try Again
+        </button>
+
+        <div class="status-indicator status-offline" id="statusIndicator">
+            <strong>Status:</strong> No internet connection detected
+        </div>
+    </div>
+
+    <script>
+        let isOnline = navigator.onLine;
+        const connectionStatus = document.getElementById('connectionStatus');
+        const statusIndicator = document.getElementById('statusIndicator');
+        const retryButton = document.getElementById('retryButton');
+
+        function updateConnectionStatus() {
+            isOnline = navigator.onLine;
+            
+            if (isOnline) {
+                connectionStatus.textContent = 'Online';
+                connectionStatus.className = 'connection-status online';
+                statusIndicator.textContent = 'Status: Internet connection restored!';
+                statusIndicator.className = 'status-indicator status-online';
+                retryButton.disabled = true;
+                retryButton.textContent = 'Connected!';
+                
+                // Redirect to home page after a short delay
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 2000);
+            } else {
+                connectionStatus.textContent = 'Offline';
+                connectionStatus.className = 'connection-status offline';
+                statusIndicator.textContent = 'Status: No internet connection detected';
+                statusIndicator.className = 'status-indicator status-offline';
+                retryButton.disabled = false;
+                retryButton.textContent = 'Try Again';
+            }
+        }
+
+        function retryConnection() {
+            if (navigator.onLine) {
+                updateConnectionStatus();
+            } else {
+                // Simulate a retry attempt
+                retryButton.disabled = true;
+                retryButton.textContent = 'Checking...';
+                
+                setTimeout(() => {
+                    if (navigator.onLine) {
+                        updateConnectionStatus();
+                    } else {
+                        retryButton.disabled = false;
+                        retryButton.textContent = 'Try Again';
+                        alert('Still offline. Please check your internet connection.');
+                    }
+                }, 2000);
+            }
+        }
+
+        // Listen for online/offline events
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+
+        // Check connection status on page load
+        updateConnectionStatus();
+
+        // Check for service worker updates
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.ready.then(registration => {
+                // Check for updates
+                registration.update();
+            });
+        }
+    </script>
+</body>
+</html>

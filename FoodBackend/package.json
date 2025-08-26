@@ -1,0 +1,89 @@
+{
+  "name": "foodbackend",
+  "version": "1.0.0",
+  "description": "Food & Drone Delivery Platform Backend",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:api": "jest --testPathPattern=api",
+    "test:unit": "jest --testPathPattern=unit",
+    "test:e2e": "jest --testPathPattern=e2e",
+    "test:security": "jest --testPathPattern=security",
+    "test:performance": "jest --testPathPattern=performance",
+    "test:middleware": "jest --testPathPattern=middleware",
+    "test:validation": "jest --testPathPattern=validation",
+    "test:websocket": "jest --testPathPattern=websocket",
+    "test:drone": "jest --testPathPattern=drone",
+    "test:auth": "jest --testPathPattern=auth",
+    "test:cleanup": "node tests/cleanup.js",
+    "test:setup": "node tests/setup.js",
+    "test:seed": "node tests/seed.js",
+    "test:report": "jest --coverage --coverageReporters=html --coverageReporters=text",
+    "test:ci": "jest --ci --coverage --watchAll=false"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.7.2",
+    "nodemailer": "^6.9.4",
+    "axios": "^1.5.0",
+    "express-rate-limit": "^6.10.0",
+    "helmet": "^7.0.0",
+    "express-validator": "^7.0.1",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2",
+    "supertest": "^6.3.3",
+    "mongodb-memory-server": "^9.1.1",
+    "nodemon": "^3.0.1",
+    "@types/jest": "^29.5.4",
+    "jest-environment-node": "^29.6.2",
+    "faker": "^6.6.6",
+    "cross-env": "^7.0.3",
+    "testcontainers": "^10.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
+    "testMatch": [
+      "**/tests/**/*.test.js",
+      "**/tests/**/*.spec.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/test-email.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "html",
+      "lcov"
+    ],
+    "testTimeout": 30000,
+    "verbose": true
+  },
+  "keywords": [
+    "food-delivery",
+    "drone-delivery",
+    "express",
+    "mongodb",
+    "socket.io",
+    "jwt"
+  ],
+  "author": "Food Delivery Team",
+  "license": "MIT"
+}
