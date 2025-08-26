@@ -1,325 +1,562 @@
-````markdown
-<div align="center">
-
 # 🍽️🚁 Food & Drone Delivery Platform
 
-![Project Banner](https://placehold.co/1280x400/2d3748/e2e8f0?text=Food+%26+Drone+Delivery+Platform)
-
-<br/>
-
-<img alt="Build" src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge" />
-<img alt="License" src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" />
-<img alt="Node.js" src="https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge&logo=node.js&logoColor=white" />
-<img alt="React" src="https://img.shields.io/badge/React-19.1.1-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
-<img alt="Express" src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
-<img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-4+-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
-<img alt="Socket.IO" src="https://img.shields.io/badge/Socket.IO-realtime-010101?style=for-the-badge&logo=socketdotio&logoColor=white" />
-<img alt="TailwindCSS" src="https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white" />
-<img alt="Drone" src="https://img.shields.io/badge/Drone-Integrated-6C63FF?style=for-the-badge&logoColor=white" />
-<img alt="OpenWeather" src="https://img.shields.io/badge/OpenWeather-API-F2711C?style=for-the-badge&logo=openweather&logoColor=white" />
-
-<br/>
-
-<img alt="User" src="https://img.shields.io/badge/Module-User-2E8B57?style=flat-square" />
-<img alt="Seller" src="https://img.shields.io/badge/Module-Seller-1E90FF?style=flat-square" />
-<img alt="Admin" src="https://img.shields.io/badge/Module-Admin-8A2BE2?style=flat-square" />
-<img alt="Drone" src="https://img.shields.io/badge/Module-Drone-6C63FF?style=flat-square" />
-<img alt="CMS" src="https://img.shields.io/badge/Module-CMS-FF8C00?style=flat-square" />
-<img alt="Notifications" src="https://img.shields.io/badge/Module-Notifications-FF1493?style=flat-square" />
-
-</div>
+[![GitHub stars](https://img.shields.io/github/stars/DARSHAN2224/Drone-Delivery-for-College-Campus?style=social)](https://github.com/DARSHAN2224/Drone-Delivery-for-College-Campus/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/DARSHAN2224/Drone-Delivery-for-College-Campus?style=social)](https://github.com/DARSHAN2224/Drone-Delivery-for-College-Campus/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/DARSHAN2224/Drone-Delivery-for-College-Campus)](https://github.com/DARSHAN2224/Drone-Delivery-for-College-Campus/issues)
+[![License](https://img.shields.io/github/license/DARSHAN2224/Drone-Delivery-for-College-Campus)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white)](https://reactjs.org/)
+[![Express](https://img.shields.io/badge/Express.js-4.18-000000?style=flat-square&logo=express&logoColor=white)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-7.5-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://mongodb.com/)
+[![Socket.IO](https://img.shields.io/badge/Socket.IO-4.7-010101?style=flat-square&logo=socketdotio&logoColor=white)](https://socket.io/)
 
 ---
 
-### 🎥 Live Preview & Demos
+## 🚀 Project Overview
 
-- User Ordering Flow: ![User Flow Demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm91NnF2cW01dGgyaXRoejdybW03YzRsc3gwbWRzcXg1NXVxNDFwMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1KY6iQ0504M0/giphy.gif)
-- Seller Product & Shop Management: ![Seller Flow Demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWN1NjVrcnZ4dTZuNDUwa2s1NWlvc2RzMDZ2d3VtdmF4NGM3eG1qMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aD4grHwn8vsDnG8/giphy.gif)
-- Admin Drone Control Dashboard: ![Admin Flow Demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzB2M2xpbTl0NG41OHl4NG11YWV1ZHd4MG90cWF2NXVrbnF5Mmp4NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oriePW1SCdwCqxGIw/giphy.gif)
-- Live Order Tracking (WebSocket): ![Live Tracking Demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGFqOHl0NzlqYnh2bzN2OWJtYjgyam50azMwdWgyMGV6d3o1eHl3dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/57Y7T2I43p0I0/giphy.gif)
+A comprehensive **Food Ordering & Drone Delivery Platform** designed for college campuses. This full-stack application features a multi-role system supporting **Users**, **Sellers**, and **Admins** with integrated drone delivery capabilities, real-time tracking, and advanced order management.
 
-> Tip: Replace the links with your Loom/GIFs. Recommended GIF width: 1200px.
+### 🎯 Key Features
 
----
-
-### ✨ Features
-
-#### 👤 User
-- Auth (signup/login/verify/reset), profile management
-- Browse shops & products, add to cart, checkout
-- Orders list & details with QR validation on delivery
-- Real-time notifications (order updates, offers)
-- Delivery tracking with live map/position events via WebSocket
-
-#### 🛍️ Seller
-- Auth & profile
-- Shop and product CRUD with media uploads
-- Offers/discounts management
-- Order workflow: accept → prepare → ready for pickup
-- Seller dashboard with metrics
-
-#### 🛡️ Admin
-- Auth & profile
-- CMS for static pages/content
-- Shop/Product/Seller approval workflows
-- Analytics & audit logs
-- Drone Control Center
-  - Assign/launch/land/return/emergency-stop
-  - Weather safety checks (OpenWeather)
-  - Real-time drone & order tracking via Socket.IO
-  - Live notifications to users/sellers
-
-#### 🚁 Drone Integration
-- REST/WebSocket control surface
-- Mission lifecycle: assign → launch → deliver → return
-- Weather gatekeeping and no-go conditions
-- Telemetry streaming and status events
+- **Multi-Role Authentication System** (User, Seller, Admin)
+- **Real-time Order Tracking** with WebSocket integration
+- **Drone Delivery Integration** with weather safety checks
+- **QR Code Validation** for secure delivery verification
+- **Advanced Admin Dashboard** with drone control center
+- **Comprehensive Testing Suite** (Unit, Integration, E2E)
+- **Push Notifications** and real-time updates
+- **Responsive Design** with modern UI/UX
 
 ---
 
-### 🧰 Tech Stack
+## 📋 Table of Contents
 
-- Frontend: React + TailwindCSS + Zustand
-- Backend: Node.js + Express + MongoDB + Socket.IO
-- External APIs: OpenWeather API
-- Drone: hardware + REST/WebSocket integration
+- [Features](#-features)
+- [Architecture](#-architecture)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+- [API Documentation](#-api-documentation)
+- [Database Schema](#-database-schema)
+- [Testing](#-testing)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-### 🗂️ Project Structure
+## 🧩 Features
 
-Note: Repository uses `FoodFrontend/` and `FoodBackend/` directories (aka `frontend/` and `backend/`).
+### 👤 User Features
+- **Authentication**: Registration, login, email verification, password reset
+- **Shop Browsing**: Browse shops, view products, add to cart
+- **Order Management**: Place orders, track delivery, view history
+- **Real-time Updates**: Live order status, delivery tracking via WebSocket
+- **QR Validation**: Scan QR codes for delivery verification
+- **Favorites & Ratings**: Save favorite items, rate products and shops
+- **Notifications**: Push notifications for order updates and offers
 
-```text
-backend/ (FoodBackend/)
-├─ src/
-│  ├─ app.js
-│  ├─ index.js
-│  ├─ constants.js
-│  ├─ db/
-│  │  └─ index.js
-│  ├─ controllers/
-│  │  ├─ adminController.js
-│  │  ├─ sellerController.js
-│  │  ├─ droneController.js
-│  │  └─ notificationController.js
-│  ├─ models/  (users, products, orders, drones, tokens, ...)
-│  ├─ routes/
-│  │  ├─ adminRoutes.js
-│  │  ├─ userRoutes.js
-│  │  ├─ sellerRoutes.js
-│  │  └─ droneRoutes.js
-│  ├─ middlewares/ (auth, rate-limit, CSRF, multer, ...)
-│  ├─ services/
-│  │  └─ socket.js
-│  └─ utils/ (ApiError, ApiResponse, email, weatherAPI, ...)
-└─ public/
+### 🛍️ Seller Features
+- **Shop Management**: Create and manage shop profiles
+- **Product CRUD**: Add, edit, delete products with image uploads
+- **Order Processing**: Accept, prepare, and manage orders
+- **Analytics Dashboard**: Sales metrics, order statistics
+- **Offer Management**: Create and manage promotional offers
+- **Inventory Management**: Stock tracking and updates
 
-frontend/ (FoodFrontend/)
-├─ src/
-│  ├─ components/
-│  │  ├─ admin/ (Dashboard, CMS, Drone Control)
-│  │  ├─ seller/ (Products, Orders, Shops)
-│  │  ├─ user/ (Shops, Cart, Orders)
-│  │  └─ common/ (UI, forms, modals)
-│  ├─ stores/ (Zustand: authStore, appStore, notificationStore)
-│  ├─ utils/ (apiInterceptor, notificationHelpers)
-│  ├─ App.jsx / main.jsx
-│  └─ styles: Tailwind setup
-└─ public/
-````
+### 🛡️ Admin Features
+- **User Management**: Approve sellers, manage user accounts
+- **Content Management**: Static pages, documentation system
+- **Drone Control Center**: 
+  - Launch, land, return, emergency stop drones
+  - Real-time drone telemetry monitoring
+  - Weather safety checks (OpenWeather API)
+  - Order assignment and tracking
+- **Analytics**: Comprehensive system analytics and audit logs
+- **Approval Workflows**: Shop, product, and seller approvals
 
------
+### 🚁 Drone Integration
+- **Weather Safety**: Pre-flight weather checks via OpenWeather API
+- **Real-time Tracking**: Live GPS coordinates and status updates
+- **Mission Control**: Assign, launch, land, and emergency stop
+- **Delivery Verification**: QR code generation and validation
+- **Fallback System**: Manual delivery when drone delivery is unavailable
 
-### 🔌 API Overview
+---
 
-High-level routes (prefixes may vary):
+## 🏗 Architecture
 
-  - Users: `POST /api/v1/users/register`, `POST /login`, `GET /me`, `PATCH /me`, `GET /orders`
-  - Seller: `POST /api/v1/seller/login`, `POST /shops`, `CRUD /products`, `GET /orders`, `PATCH /orders/:id/status`
-  - Admin: `GET /admin/dashboard`, `POST /admin/pages`, `POST /admin/approve`, `GET /admin/analytics`
-  - Drone: `POST /drone/assign`, `POST /drone/launch`, `POST /drone/land`, `POST /drone/return`, `POST /drone/emergency-stop`, `GET /drone/:id/telemetry`
-  - Notifications: `GET /notifications`, WebSocket events: `order:update`, `drone:telemetry`, `offer:new`
-  - CMS: `GET /pages/:slug`, `POST /admin/pages`
-
-Full API docs: [docs/API.md](https://www.google.com/search?q=docs/API.md) (placeholder)
-
-\<details\>
-\<summary\>WebSocket Events\</summary\>
-
-  - `connection` / `disconnect`
-  - `order:update` (status, ETA, location)
-  - `drone:telemetry` (lat, lng, altitude, battery)
-  - `notification:new`
-
-\</details\>
-
------
-
-### 🖼️ Screenshots
-
------
-
-### 🚀 Setup & Installation
-
-#### 1\) Clone & Install
-
-```bash
-git clone [https://github.com/DARSHAN2224/Drone-Delivery-for-College-Campus.git](https://github.com/DARSHAN2224/Drone-Delivery-for-College-Campus.git)
-cd Drone-Delivery-for-College-Campus
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │    Backend      │    │    Database     │
+│   (React)       │◄──►│   (Node.js)     │◄──►│   (MongoDB)     │
+│                 │    │                 │    │                 │
+│ • User Interface│    │ • REST APIs     │    │ • User Data     │
+│ • Real-time UI  │    │ • WebSocket     │    │ • Orders        │
+│ • State Mgmt    │    │ • Auth          │    │ • Products      │
+│ • Notifications │    │ • File Upload   │    │ • Drones        │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                                │
+                                ▼
+                       ┌─────────────────┐
+                       │  External APIs  │
+                       │                 │
+                       │ • OpenWeather   │
+                       │ • Email Service │
+                       │ • Cloud Storage │
+                       └─────────────────┘
 ```
 
-#### 2\) Backend Setup (`FoodBackend/`)
+---
 
-```bash
-cd FoodBackend
-npm install
-cp ../env.example .env      # or create .env
-```
+## 🧰 Tech Stack
 
-Required env variables:
+### Frontend (`FoodFrontend/`)
+- **React 19** - Modern UI framework
+- **Vite** - Fast build tool and dev server
+- **TailwindCSS 4.0** - Utility-first CSS framework
+- **Zustand** - Lightweight state management
+- **React Router DOM** - Client-side routing
+- **Socket.IO Client** - Real-time communication
+- **Axios** - HTTP client
+- **Formik + Yup** - Form handling and validation
+- **React Hot Toast** - Toast notifications
+- **Leaflet** - Interactive maps
+- **jsQR** - QR code scanning
 
+### Backend (`FoodBackend/`)
+- **Node.js 18+** - JavaScript runtime
+- **Express.js 4.18** - Web framework
+- **MongoDB 7.5** - NoSQL database
+- **Mongoose** - MongoDB ODM
+- **Socket.IO 4.7** - Real-time bidirectional communication
+- **JWT** - Authentication tokens
+- **bcryptjs** - Password hashing
+- **Multer** - File upload handling
+- **Nodemailer** - Email service
+- **Express Rate Limit** - API rate limiting
+- **Helmet** - Security headers
+- **Morgan** - HTTP request logging
+
+### Development & Testing
+- **Jest** - Testing framework (Backend)
+- **Vitest** - Testing framework (Frontend)
+- **Playwright** - E2E testing
+- **ESLint** - Code linting
+- **Nodemon** - Development server
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** (v18 or higher)
+- **npm** or **yarn**
+- **MongoDB** (local or Atlas)
+- **Git**
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/DARSHAN2224/Drone-Delivery-for-College-Campus.git
+   cd Drone-Delivery-for-College-Campus
+   ```
+
+2. **Backend Setup**
+   ```bash
+   cd FoodBackend
+   npm install
+   cp ../env.example .env
+   # Edit .env with your configuration
+   npm run dev
+   ```
+
+3. **Frontend Setup**
+   ```bash
+   cd ../FoodFrontend
+   npm install
+   npm run dev
+   ```
+
+### Environment Configuration
+
+Create `.env` files in both `FoodBackend/` and `FoodFrontend/` directories:
+
+#### Backend Environment Variables
 ```env
 PORT=8000
-MONGODB_URL=mongodb://127.0.0.1:27017
-
+MONGODB_URL=mongodb://127.0.0.1:27017/food-drone
 CORS_ORIGIN=*
 
-ACCESS_TOKEN_SECRET=your_super_strong_access_token_secret
-ACCESS_TOKEN_EXPIRY = 1d
+# JWT Configuration
+ACCESS_TOKEN_SECRET=your_access_token_secret
+ACCESS_TOKEN_EXPIRY=1d
+REFRESH_TOKEN_SECRET=your_refresh_token_secret
+REFRESH_TOKEN_EXPIRY=7d
 
-REFRESH_TOKEN_SECRET = your_super_strong_refresh_token_secret
-REFRESH_TOKEN_EXPIRY = 7d
+# External Services
+OPENWEATHER_API_KEY=your_openweather_api_key
+CLOUDINARY_NAME=your_cloudinary_name
+CLOUDINARY_SECRET=your_cloudinary_secret
+CLOUDINARY_KEY=your_cloudinary_key
 
-CLOUDINARY_NAME=your_cloudinary_name_here
-CLOUDINARY_SECRET=your_cloudinary_api_secret_here
-CLOUDINARY_KEY=your_cloudinary_api_key_here
-
-NODE_ENV=development
-
-SMTP_MAIL=your_email@example.com
-SMTP_PASSWORD=your_email_password_or_app_password
+# Email Configuration
+SMTP_MAIL=your_email@gmail.com
+SMTP_PASSWORD=your_app_password
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
 
-# VAPID Keys for Push Notifications
-VAPID_PUBLIC_KEY=your_public_vapid_key_here
-VAPID_PRIVATE_KEY=your_private_vapid_key_here
-VAPID_EMAIL=mailto:noreply@foodapp.com
+# Push Notifications
+VAPID_PUBLIC_KEY=your_public_vapid_key
+VAPID_PRIVATE_KEY=your_private_vapid_key
+VAPID_EMAIL=noreply@foodapp.com
 
+# API Configuration
 BACKEND_URL=http://localhost:8000/api/v1
-OPENWEATHER_API_KEY=your_openweather_api_key_here
+NODE_ENV=development
 ```
 
-Run development server:
-
-```bash
-npm run dev
-```
-
-Run production build/start (example):
-
-```bash
-npm run build && npm start
-```
-
-#### 3\) Frontend Setup (`FoodFrontend/`)
-
-```bash
-cd ../FoodFrontend
-npm install
-```
-
-Create `.env` (Vite):
-
+#### Frontend Environment Variables
 ```env
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=http://localhost:8000/api/v1
 VITE_SOCKET_URL=http://localhost:8000
+VITE_APP_NAME=Food & Drone Delivery
 ```
 
-Run development server:
+### Running the Application
 
+1. **Start Backend Server**
+   ```bash
+   npm run dev
+   # Server runs on http://localhost:8000
+   ```
+
+2. **Start Frontend Development Server**
+   ```bash
+   cd FoodFrontend
+   npm run dev
+   # Frontend runs on http://localhost:5173
+   ```
+   
+3. **Start Backend and Frontend Development Server Together**
+   ```bash
+   npm run start:all
+   # Server runs on http://localhost:8000
+   # Frontend runs on http://localhost:5173
+   ```
+   
+4. **Run Tests**
+   ```bash
+   # Backend tests
+   cd FoodBackend
+   npm test
+   
+   # Frontend tests
+   cd FoodFrontend
+   npm test
+   ```
+
+---
+
+## 🔌 API Documentation
+
+### Authentication Endpoints
+- `POST /api/v1/users/register` - User registration
+- `POST /api/v1/users/login` - User login
+- `POST /api/v1/seller/login` - Seller login
+- `POST /api/v1/admin/login` - Admin login
+- `POST /api/v1/users/verify-email` - Email verification
+- `POST /api/v1/users/forgot-password` - Password reset
+
+### User Endpoints
+- `GET /api/v1/users/me` - Get user profile
+- `PATCH /api/v1/users/me` - Update user profile
+- `GET /api/v1/shops` - List shops
+- `GET /api/v1/shops/:id/products` - Get shop products
+- `POST /api/v1/cart` - Add to cart
+- `GET /api/v1/cart` - Get cart items
+- `POST /api/v1/orders` - Place order
+- `GET /api/v1/orders` - Get user orders
+
+### Seller Endpoints
+- `POST /api/v1/seller/shops` - Create shop
+- `PATCH /api/v1/seller/shops/:id` - Update shop
+- `POST /api/v1/seller/products` - Add product
+- `PATCH /api/v1/seller/products/:id` - Update product
+- `DELETE /api/v1/seller/products/:id` - Delete product
+- `GET /api/v1/seller/orders` - Get seller orders
+- `PATCH /api/v1/seller/orders/:id/status` - Update order status
+
+### Admin Endpoints
+- `GET /api/v1/admin/dashboard` - Admin dashboard
+- `GET /api/v1/admin/users` - List all users
+- `POST /api/v1/admin/approve-seller` - Approve seller
+- `GET /api/v1/admin/analytics` - System analytics
+- `POST /api/v1/admin/pages` - Create static page
+
+### Drone Endpoints
+- `POST /api/v1/drone/assign` - Assign drone to order
+- `POST /api/v1/drone/launch` - Launch drone
+- `POST /api/v1/drone/land` - Land drone
+- `POST /api/v1/drone/return` - Return drone to base
+- `POST /api/v1/drone/emergency-stop` - Emergency stop
+- `GET /api/v1/drone/:id/telemetry` - Get drone telemetry
+
+### WebSocket Events
+- `connection` / `disconnect` - Client connection events
+- `order:update` - Order status updates
+- `drone:telemetry` - Real-time drone data
+- `notification:new` - New notifications
+
+---
+
+## 🗃 Database Schema
+
+### Core Collections
+
+#### Users
+```javascript
+{
+  name: String,
+  email: String (unique),
+  password: String (hashed),
+  role: String (enum: 'user', 'seller', 'admin'),
+  phone: String,
+  addresses: [Address],
+  isVerified: Boolean,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+#### Shops
+```javascript
+{
+  name: String,
+  ownerId: ObjectId (ref: 'User'),
+  description: String,
+  location: {
+    type: String,
+    coordinates: [Number, Number]
+  },
+  categories: [String],
+  isOpen: Boolean,
+  isApproved: Boolean,
+  images: [String],
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+#### Products
+```javascript
+{
+  shopId: ObjectId (ref: 'Shop'),
+  name: String,
+  description: String,
+  price: Number,
+  stock: Number,
+  images: [String],
+  category: String,
+  isAvailable: Boolean,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+#### Orders
+```javascript
+{
+  userId: ObjectId (ref: 'User'),
+  shopId: ObjectId (ref: 'Shop'),
+  items: [{
+    productId: ObjectId (ref: 'Product'),
+    quantity: Number,
+    price: Number
+  }],
+  total: Number,
+  status: String (enum: 'pending', 'accepted', 'preparing', 'ready', 'delivering', 'delivered', 'cancelled'),
+  deliveryType: String (enum: 'drone', 'manual'),
+  deliveryAddress: Address,
+  assignedDroneId: ObjectId (ref: 'Drone'),
+  qrCode: String,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+#### Drones
+```javascript
+{
+  droneId: String (unique),
+  status: String (enum: 'idle', 'assigned', 'launching', 'in-flight', 'delivering', 'returning', 'landing', 'maintenance'),
+  battery: Number,
+  location: {
+    type: String,
+    coordinates: [Number, Number]
+  },
+  altitude: Number,
+  currentOrderId: ObjectId (ref: 'Order'),
+  lastTelemetry: Date,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+---
+
+## ✅ Testing
+
+### Backend Testing
 ```bash
-npm run dev
+cd FoodBackend
+
+# Run all tests
+npm test
+
+# Run specific test suites
+npm run test:api          # API tests
+npm run test:unit         # Unit tests
+npm run test:e2e          # End-to-end tests
+npm run test:auth         # Authentication tests
+npm run test:drone        # Drone integration tests
+npm run test:websocket    # WebSocket tests
+
+# Coverage report
+npm run test:coverage
 ```
 
-Build production:
-
+### Frontend Testing
 ```bash
-npm run build
+cd FoodFrontend
+
+# Run all tests
+npm test
+
+# Run specific test suites
+npm run test:unit         # Unit tests
+npm run test:component    # Component tests
+npm run test:integration  # Integration tests
+npm run test:e2e          # E2E tests with Playwright
+
+# Coverage report
+npm run test:coverage
 ```
 
-#### 4\) Drone Integration
+### Test Structure
+- **Unit Tests**: Individual functions and components
+- **Integration Tests**: API endpoints and database operations
+- **E2E Tests**: Complete user workflows
+- **WebSocket Tests**: Real-time communication
+- **Drone Tests**: Drone control and telemetry
 
-  - Ensure drone firmware/bridge exposes REST & WebSocket endpoints compatible with the server
-  - Configure safety rules (weather thresholds, battery min, geo-fences)
-  - Replace placeholders in Admin Drone Control UI if needed
+---
 
------
+## 🚀 Deployment
 
-### 🧭 Environment & Configuration
+### Production Build
 
-  - MongoDB connection via `DB_URI`
-  - JWT-based authentication with `JWT_SECRET`
-  - OpenWeather API key for weather checks: `OPENWEATHER_API_KEY`
-  - CORS/Origin for frontend: `CLIENT_ORIGIN`
+1. **Backend Deployment**
+   ```bash
+   npm run build
+   npm start
+   ```
 
-\<details\>
-\<summary\>Optional Integrations\</summary\>
+2. **Frontend Deployment**
+   ```bash
+   cd FoodFrontend
+   npm run build
+   # Deploy dist/ folder to your hosting service
+   ```
 
-  - Email Provider (SMTP/API)
-  - Cloud storage/CDN for product images
-  - Analytics/Logging (e.g., Sentry)
+### Environment Setup
 
-\</details\>
+1. **MongoDB Atlas** - Use cloud database for production
+2. **Environment Variables** - Set all required environment variables
+3. **SSL Certificate** - Enable HTTPS for security
+4. **CORS Configuration** - Update allowed origins
+5. **Rate Limiting** - Configure appropriate limits
+6. **Monitoring** - Set up logging and monitoring
 
------
+### Deployment Platforms
 
-### 🔮 Future Enhancements
+- **Backend**: Heroku, Railway, Render, DigitalOcean
+- **Frontend**: Vercel, Netlify, GitHub Pages
+- **Database**: MongoDB Atlas
+- **File Storage**: Cloudinary, AWS S3
 
-  - Saved addresses + distance-based delivery fees
-  - Geofencing/no-fly zones for drones
-  - Soft-delete with cascade cleanup
-  - Search ranking, facets, typo tolerance
-  - Advanced routing for multi-drone fleets
+---
 
------
+## 🤝 Contributing
 
-### 👥 Contributors
+We welcome contributions! Please follow these steps:
 
-\<table\>
-\<tr\>
-\<td align="center"\>
-\<a href="https://github.com/DARSHAN2224"\>
-\<img src="https://www.google.com/search?q=https://avatars.githubusercontent.com/u/124701155%3Fv%3D4" width="80px;" alt=""/\>\<br /\>
-\<sub\>\<b\>Darshan P\</b\>\</sub\>
-\</a\>
-\</td\>
-\</tr\>
-\</table\>
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **Make your changes**
+4. **Run tests**
+   ```bash
+   # Backend
+   cd FoodBackend && npm test
+   
+   # Frontend
+   cd FoodFrontend && npm test
+   ```
+5. **Commit your changes**
+   ```bash
+   git commit -m "feat: add amazing feature"
+   ```
+6. **Push to the branch**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+7. **Open a Pull Request**
 
-Want to contribute? See [CONTRIBUTING.md](https://www.google.com/search?q=CONTRIBUTING.md) (placeholder).
+### Development Guidelines
 
------
+- Follow the existing code style
+- Write tests for new features
+- Update documentation as needed
+- Ensure all tests pass before submitting
 
-### 📫 Contact
+---
 
-  - Email: darshan.p.dev@email.com
-  - LinkedIn: [/in/pdarshan2224/](https://www.linkedin.com/in/pdarshan2224/)
+## 📄 License
 
------
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-\<div align="center"\>
+---
 
-\<br/\>
+## 📞 Contact
 
-\<img alt="License" src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" /\>
+**Darshan P.** - [darshan@example.com](mailto:darshan@example.com)
 
-\<br/\>
+**GitHub**: [@DARSHAN2224](https://github.com/DARSHAN2224)
 
-Made with ❤️ for great food and faster skies.
+**Project Link**: [https://github.com/DARSHAN2224/Drone-Delivery-for-College-Campus](https://github.com/DARSHAN2224/Drone-Delivery-for-College-Campus)
 
-\</div\>
+---
 
-```
-```
+## 🙏 Acknowledgments
+
+- **OpenWeather API** for weather data
+- **Socket.IO** for real-time communication
+- **MongoDB** for database
+- **React Community** for the amazing ecosystem
+- **TailwindCSS** for the utility-first CSS framework
+
+---
+
+<div align="center">
+
+**Made with ❤️ for the future of food delivery**
+
+🚁 *Flying food to your doorstep* 🍽️
+
+</div>
+
+
