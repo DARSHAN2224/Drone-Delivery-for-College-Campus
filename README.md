@@ -533,7 +533,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Darshan P.** - [darshan@example.com](mailto:darshan@example.com)
+**Darshan P.** - [darshan@example.com](mailto:pdarshan2224@gmail.com)
 
 **GitHub**: [@DARSHAN2224](https://github.com/DARSHAN2224)
 
